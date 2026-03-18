@@ -55,3 +55,81 @@ my_dict = dict(sorted(my_dict.items())) # Ordenación
 print(my_dict)
 print(type(my_dict))
 
+"""
+Extra
+
+Crea una agenda de contactos por terminal.
+- Debes implementar funcionalidades de búsqueda, inserción, actualización y eliminación de contactos.
+- Cada contacto debe tener un nombre y un número de teléfono.
+- El programa solicita en primer lugar cuál es la operación que se quiere realizar, y a continuación
+los datos necesarios para llevarla a cabo.
+- El programa no puede dejar introducir números de teléfono no numéricos y con más de 11 dígitos.
+(o el número de dígitos que quieras)
+- También se debe proponer una operación de finalización del programa.
+ """
+
+
+def contact_list(): 
+    agenda: dict = {}
+
+    def insert_contact(name):
+        while True:
+                phone_number = input(f"Escribe el numero de teléfono del contacto: ")
+                if phone_number.isdigit() and len(phone_number) <= 10:
+                    agenda[name] = phone_number
+                    break
+                else:
+                    print("Debes ingresar un número de máximo 10 digitos.") 
+
+    while True:
+
+        print("")
+        print("1. Buscar contacto\n" 
+              "2. Añadir contacto\n"
+              "3. Actualizar contacto\n"
+              "4. Eliminar contacto\n"
+              "5. Ver agenda\n"
+              "6. Salir\n")
+        option = input("Elige la opción que deseas: ")
+
+
+        match option:
+            case "1":
+                name = input("Escribe el nombre del contacto que desea buscar: ")
+                if name in agenda:
+                    print(f"El número de telefono de {name} es: {agenda[name]}")
+                else:
+                    print(f"El contacto {name} no existe.")
+
+            case "2":
+                name = input("Escribe el nombre del contacto nuevo: ")
+                insert_contact(name)   
+
+            case "3":
+                name = input("Escribe el nombre del contacto que desea actualizar: ")
+                if name in agenda:
+                    insert_contact(name)     
+                else:
+                    print(f"El contacto {name} no existe.")
+
+            case "4":
+                name = input("Escribe el nombre del contacto que desea eliminar: ")
+                if name in agenda:
+                    del agenda[name]
+                else:
+                    print(f"El contacto {name} no existe.")
+
+            case "5":
+                print("\nAgenda")
+                for name, phone in agenda.items():
+                    print(f"{name} - {phone}")
+
+            case "6":
+                print("Saliendo de la agenda")
+                break
+
+            case _:
+                print("Opción no válida. Eliga una opción del 1 al 6")    
+
+
+contact_list()
