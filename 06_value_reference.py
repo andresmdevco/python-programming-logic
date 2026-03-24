@@ -43,4 +43,47 @@ my_list_c = [10, 20]
 my_list_func(my_list_c)
 print(my_list_c)
 
+"""
+Extra
+
+Crea dos programas que reciban dos parámetros (cada uno) definidos como
+variables anteriormente.
+- Cada programa recibe, en un caso, dos parámetros por valor, y en otro caso, por referencia.
+Estos parámetros los intercambia entre ellos en su interior, los retorna, y su retorno
+se asigna a dos variables diferentes a las originales. A continuación, imprime
+el valor de las variables originales y las nuevas, comprobando que se ha invertido
+su valor en las segundas.
+Comprueba también que se ha conservado el valor original en las primeras.
+"""
+
+# Por valor
+def value_funtion(value_a: int, value_b: int) -> tuple:
+    temp = value_a
+    value_a = value_b
+    value_b = temp
+    
+    return value_a, value_b
+
+
+int_a = 34
+int_b = 28
+int_c, int_d = value_funtion(int_a, int_b)
+
+print(f"{int_a}, {int_b}")
+print(f"{int_c}, {int_d}")
+
+# Por referencia
+def ref_funtion(value_a: list, value_b: list) -> tuple:
+    temp = value_a
+    value_a = value_b
+    value_b = temp
+
+    return value_a, value_b
+
+
+list_a = [25, 35]
+list_b = [45, 65]
+list_c, list_d = ref_funtion(list_a, list_b)
+print(f"{list_a}, {list_b}")
+print(f"{list_c}, {list_d}")
 
