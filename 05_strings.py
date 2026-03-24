@@ -62,3 +62,27 @@ print(c3.lower().count("f"))
 
 # Formateo
 print("Saludo: {}, grupo: {}!".format(c1, c2))
+
+# Interpolación
+print(f"Saludo: {c1}, grupo: {c2}!")
+
+# Transformación en lista de caracteres
+print(list(c3))
+
+# Transformación de lista en cadena
+l1 = [c1, ", ", c2, "!"]
+print("".join(l1))
+
+# Transformaciones numéricas
+c4 = "123456.123"
+c4 = float(c4)
+print(c4)
+
+# Comprobaciones varias
+c4 = "123456"
+print(c1.isalnum())
+print(c1.isalpha())
+print(c4.isalpha())
+print(c4.isnumeric())
+
+
