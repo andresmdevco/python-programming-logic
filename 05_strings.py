@@ -86,3 +86,56 @@ print(c4.isalpha())
 print(c4.isnumeric())
 
 
+"""
+Extra
+
+Crea un programa que analice dos palabras diferentes y realice comprobaciones
+para descubrir si son:
+ - Palíndromos
+ - Anagramas
+ - Isogramas
+"""
+
+def check_word(word1: str, word2: str):
+    words = [word1, word2]
+
+    # Palíndromos
+    for word in words:
+        if word == word[::-1]:
+            print(f"La palabra {word} es un palíndromo")
+        else:
+            print(f"La palabra {word} no es un palíndromo") 
+    
+    # Anagramas
+    if sorted(word1) == sorted(word2):
+        print(f"Las palabras {word1} y {word2} son anagramas")
+    else:
+        print(f"Las palabras {word1} y {word2} no son anagramas")
+
+   
+    # Isogramas
+    def isogram(word: str) -> bool:
+        letter_dict = dict()
+        for letter in word:
+            letter_dict[letter] = letter_dict.get(letter, 0) + 1
+
+        isogram = True
+        values = list(letter_dict.values())
+        isogram_len = values[0]
+        for letter_count in values:
+            if letter_count != isogram_len:
+                isogram = False
+                break
+        
+        if isogram == True:
+            print(f"La palabra {word} es un isograma")
+        else:
+            print(f"La palabra {word} no es un isograma")
+
+    for word in words:
+        isogram(word)
+            
+
+
+check_word("reconocer", "patopatopato")
+check_word("amor", "roma")
