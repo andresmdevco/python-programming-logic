@@ -114,7 +114,7 @@ def check_word(word1: str, word2: str):
 
    
     # Isogramas
-    def isogram(word: str) -> bool:
+    def isogram(word: str):
         letter_dict = dict()
         for letter in word:
             letter_dict[letter] = letter_dict.get(letter, 0) + 1
@@ -126,11 +126,12 @@ def check_word(word1: str, word2: str):
             if letter_count != isogram_len:
                 isogram = False
                 break
-        
+    
         if isogram == True:
             print(f"La palabra {word} es un isograma")
         else:
             print(f"La palabra {word} no es un isograma")
+
 
     for word in words:
         isogram(word)
