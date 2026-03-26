@@ -67,10 +67,10 @@ class Queue:
     def __init__(self):
         self.queue = []
     
-    def push(self, item):
+    def equeue(self, item):
         return self.queue.append(item)
 
-    def pop(self):
+    def deequeue(self):
         if self.count() == 0:
             return None
         return self.queue.pop(0)
@@ -84,12 +84,12 @@ class Queue:
 
 
 my_queue = Queue()
-my_queue.push("Factura.pdf")
-my_queue.push("CV.pdf")
-my_queue.push("Inventario.pdf")
+my_queue.equeue("Factura.pdf")
+my_queue.equeue("CV.pdf")
+my_queue.equeue("Inventario.pdf")
 print(my_queue.count())
 my_queue.print()
-my_queue.pop()
+my_queue.deequeue()
 print(my_queue.count())
 my_queue.print()
 
