@@ -25,7 +25,13 @@ Repositorio de ejercicios y ejemplos prácticos desarrollados durante un curso d
 
 ---
 
-## 🚀 Requisitos y ejecución
+## 🛠️ Tecnologías
+
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+
+---
+
+## ⚙️ Cómo ejecutar el proyecto
 
 **Requisito:** Python 3.10 o superior.
 
@@ -34,12 +40,5 @@ Para ejecutar cualquier archivo:
 ```bash
 python nombre_del_archivo.py
 ```
-
----
-
-## 🛠️ Tecnologías
-
-- [Python 3](https://www.python.org/) — lenguaje principal
-
 
 
